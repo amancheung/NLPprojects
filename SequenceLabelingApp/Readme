@@ -1,0 +1,31 @@
+Lap Yan Cheung
+
+Program created with Python that uses data generated from WSJ_02-21.pos-chunk file, which annotates each word by its position in a noun group, and tags words from a new file, e.g. WSJ_24 by their positions in a noun group.
+
+This program has an accuracy of over 95% for correct tags in both the development and test corpus, and F-measures of over 90%.
+
+To run the initial program that generates features for each word token, type the following in command line:
+
+- Create training file
+python wordsFeatureTag.py WSJ_02-21.pos-chunk training.feature training 
+			   [filename]        [feature-file name] [format command]
+- Create testing file
+python wordsFeatureTag.py WSJ_24.pos test.feature test
+			 [filename] [feature-file [format command]
+					name]
+
+Within the program I have implemented the following features:
+1) Current word
+2) Current POS
+3) Previous word
+4) Previous POS
+5) Previous two word
+6) Previous two word POS
+7) Next word
+8) Next word POS
+5) Word stem
+6) If word is capitalized
+7) If word is sentence beginning
+8) If word is sentence end
+9) Prev BIO
+10) BIO - *training
