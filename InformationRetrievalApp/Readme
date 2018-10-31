@@ -9,3 +9,5 @@ Type python lyc286_info_retrieve.py
 *Make sure that the file "numAbsWordsDocs.txt" is in the same directory, as it is used to look up word frequencies for the abstracts
  - However, I have also commented out the code inside the program that reproduces the same data
  
+ List of queries are saved in cran.qry, list of abstracts are saved in cran.all.1400
+ 
