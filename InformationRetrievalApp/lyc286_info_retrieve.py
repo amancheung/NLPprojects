@@ -1,3 +1,5 @@
+#Lap Yan Cheung
+
 import nltk
 import stop_list
 import sys
