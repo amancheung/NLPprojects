@@ -1,0 +1,11 @@
+Program created with python that compares queries against abstracts, and rank abstracts for each query base on their similarity.
+This program created outputs with Average MAP score of .31, which is higher than the .20 average.
+
+To run the program on command line.
+
+Type python lyc286_info_retrieve.py
+
+*Make sure all files are in the same directory
+*Make sure that the file "numAbsWordsDocs.txt" is in the same directory, as it is used to look up word frequencies for the abstracts
+ - However, I have also commented out the code inside the program that reproduces the same data
+ 
