@@ -6,15 +6,25 @@ This program has an accuracy of over 95% for correct tags in both the developmen
 
 To run the initial program that generates features for each word token, type the following in command line:
 
-- Create training file
+- Create training file to be used to create model for Maximum Entropy program that tags words
 python wordsFeatureTag.py WSJ_02-21.pos-chunk training.feature training 
 			   [filename]        [feature-file name] [format command]
-- Create testing file
+- Create testing file to be used to create model for Maximum Entropy program that tags words
 python wordsFeatureTag.py WSJ_24.pos test.feature test
 			 [filename] [feature-file [format command]
 					name]
+- Compile Maximum Entropy program
+javac -cp maxent-3.0.0.jar:trove.jar *.java
 
-Within the program I have implemented the following features:
+- Create model from training file
+java -cp .:maxent-3.0.0.jar:trove.jar MEtrain training.feature model.chunk
+
+- Create file with words marked with BIO tags for noun groups
+java -cp .:maxent-3.0.0.jar:trove.jar MEtag test.feature model.chunk response.chunk
+
+***Disclaimer: The java Maximum Entropy programs are written by Prof. Grishman of the NYU Natural Language Processing Department
+
+Within the program I have implemented the following features that are tagged with each word token:
 1) Current word
 2) Current POS
 3) Previous word
